@@ -1,0 +1,9 @@
+<% if session[:user_id] %>
+  <h1>Hello World!</h1>
+  <p>Welcome to my first Rails application, <%= session[:username] %>!</p>
+  <p>You are now logged in and can access all features.</p>
+<% else %>
+  <h1>Hello World!</h1>
+  <p>Welcome Mehr, to my first Rails application.</p>
+  <p>Please <%= link_to "login", login_path %> to access all features.</p>
+<% end %>
