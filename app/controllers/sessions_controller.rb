@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
   def new
-    # This action renders the login form
+    # creates the login form
   end
 
   def create
-    # This action handles the login form submission
+    # assigning the username that user inpuits to username var
     username = params[:username]
     password = params[:password]
     
-    # Simple authentication (in real apps, you'd use proper authentication)
+    
     if username == "admin" && password == "password"
       session[:user_id] = 1
       session[:username] = username
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    # This action handles logout
+    #  handles logout
     session[:user_id] = nil
     session[:username] = nil
     redirect_to root_path, notice: "Successfully logged out!"
